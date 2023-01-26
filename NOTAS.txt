@@ -1,0 +1,11 @@
+refactor de los componentes
+  si falta algun: memo
+  si falta algun: use callback
+  hacer algunos mas reusables: card
+  separar los componentes link  button
+  [x] asegurarse de que cuando algo pierda el foco se cierre 
+  faltan skeleton
+  search input, hay 2 uno en marcadores y otros en el buscador, esto puede hacerse un componente solo el input
+  responsive
+
+NO NECESARIO PERO CREAR UNA RAMA PARA HACER LO DE LOS GUARDADOS CON CONTEXT SIN ZUSTAND
