@@ -30,12 +30,6 @@ const useClickOutside = ({ includesAnchor = false } = {}) => {
     }
   }, [show, includesAnchor])
 
-  // const handleClick = useCallback(e => {
-  //   if (e.target.localName === 'a') {
-  //     toggle()
-  //   }
-  // }, [])
-
   return { isOutside: show, ref, toggle, forceToggle }
 }
 

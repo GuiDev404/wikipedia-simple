@@ -1,27 +1,19 @@
 import React from 'react'
-import Button from '../components/Button'
 import Header from '../components/Header'
 import { ReadIcon } from '../components/Icons'
 
 import Trending from '../components/Trending'
 import OnThisDay from '../components/OnThisDay'
 import ImageOfDay from '../components/ImageOfDay'
+import Anchor from '../components/Anchor'
+import { HOME_MAIN_LINKS } from '../const/links'
+import ListOfLinks from '../components/ListOfLinks'
+import Tabs from '../components/Tabs'
 
-const HOME_MAIN_LINKS = [
-  {
-    url: 'https://es.wikipedia.org/wiki/Wikipedia:Contacto',
-    label: 'Contacto'
-  },
-  { url: 'https://es.wikipedia.org/wiki/Ayuda:Contenidos', label: 'Ayuda' },
-  {
-    url: 'https://es.wikipedia.org/wiki/Ayuda:Introducci%C3%B3n',
-    label: 'Primeros pasos'
-  },
-  { url: 'https://es.wikipedia.org/wiki/Wikipedia:Caf%C3%A9', label: 'Café' },
-  {
-    url: 'https://es.wikipedia.org/wiki/Ayuda:C%C3%B3mo_puedes_colaborar',
-    label: '¿Cómo colaborar?'
-  }
+const tabs = [
+  { id: 0, content: <Trending />, label: 'Tendencias' },
+  { id: 1, content: <OnThisDay />, label: 'En este dia' },
+  { id: 2, content: <ImageOfDay />, label: 'Imagen del dia' }
 ]
 
 const Home = () => {
@@ -35,35 +27,40 @@ const Home = () => {
         }
         subtitle='La enciclopedia de contenido libre
         que todos pueden editar'
+        className='py-8 md:py-0'
       >
         <div className='my-10 flex items-center flex-col'>
-          <Button
-            isLink
+          <Anchor
             url='#comenzar'
-            text='Comenzar a leer'
-            styles='hover:border-neutral-400 hover:text-zinc-800 bg-white border-neutral-300 py-3 px-5 text-zinc-700 mb-10'
-            leftIcon={<ReadIcon width='20' height='20' />}
-          />
+            className='hover:border-neutral-400 hover:text-zinc-600 bg-white border-neutral-300 py-3 px-5 text-zinc-700 mb-10'
+          >
+            <ReadIcon width='20' height='20' />
+            Comenzar a leer
+          </Anchor>
 
-          <section className='flex gap-3 my-5'>
-            {HOME_MAIN_LINKS.map((link) => (
-              <a
-                key={link.label}
-                className='hover:underline rounded-md text-[.8rem] px-3 py-2'
-                href={link.url}
-              >
-                {link.label}
-              </a>
-            ))}
-          </section>
+          <ListOfLinks
+            links={HOME_MAIN_LINKS}
+            className='justify-center text-center gap-3 my-5'
+            isAnchor
+          />
         </div>
       </Header>
 
-      {/* grid md:grid-rows-2 md:grid-cols-3 lg:grid-cols-4 gap-4 */}
-      <div className='px-5   grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-2' id='comenzar'>
-        <OnThisDay />
-        <Trending />
-        <ImageOfDay />
+      <div className='px-5' id='comenzar'>
+
+        <Tabs
+          className='block sm:hidden'
+          tabs={tabs}
+        />
+
+        <div
+          className='hidden sm:grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-2'
+        >
+          <OnThisDay />
+          <Trending />
+          <ImageOfDay />
+        </div>
+
       </div>
     </>
   )

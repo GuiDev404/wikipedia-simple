@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import useToday from '../hooks/useToday'
-import Button from './Button'
-import { EyeIcon } from './Icons'
+
 import SaveButton from './SaveButton'
 
 const orderAsc = (a, b) => a.rank - b.rank

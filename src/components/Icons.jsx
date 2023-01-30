@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const SearchIcon = (props) => {
   return (
@@ -97,44 +96,6 @@ export const ExternalLinkIcon = (props) => {
   )
 }
 
-export const PinnedIcon = (props) => {
-  return (
-    <svg
-      width={18}
-      height={18}
-      viewBox='0 0 24 24'
-      strokeWidth={1.5}
-      stroke='currentColor'
-      fill='none'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      {...props}
-    >
-      <path d='M0 0h24v24H0z' stroke='none' />
-      <path d='M9 4v6l-2 4v2h10v-2l-2-4V4M12 16v5M8 4h8' />
-    </svg>
-  )
-}
-
-export const PinnedOffIcon = (props) => {
-  return (
-    <svg
-      width={18}
-      height={18}
-      viewBox='0 0 24 24'
-      strokeWidth={1.5}
-      stroke='currentColor'
-      fill='none'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      {...props}
-    >
-      <path d='M0 0h24v24H0z' stroke='none' />
-      <path d='m3 3 18 18M15 4.5l-3.249 3.249m-2.57 1.433L7 10l-1.5 1.5 7 7L14 17l.82-2.186m1.43-2.563L19.5 9M9 15l-4.5 4.5M14.5 4 20 9.5' />
-    </svg>
-  )
-}
-
 export const SpinIcon = props => {
   return (
     <svg
@@ -159,49 +120,6 @@ export const SpinIcon = props => {
   )
 }
 
-export const DiceIcon = props => {
-  return (
-    <svg
-      width={20}
-      height={20}
-      viewBox='0 0 24 24'
-      strokeWidth={1.5}
-      stroke='currentColor'
-      fill='none'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      {...props}
-    >
-      <path d='M0 0h24v24H0z' stroke='none' />
-      <rect x={4} y={4} width={16} height={16} rx={2} />
-      <circle cx={8.5} cy={8.5} r={0.5} fill='currentColor' />
-      <circle cx={15.5} cy={8.5} r={0.5} fill='currentColor' />
-      <circle cx={15.5} cy={15.5} r={0.5} fill='currentColor' />
-      <circle cx={8.5} cy={15.5} r={0.5} fill='currentColor' />
-    </svg>
-  )
-}
-
-export const EyeIcon = props => {
-  return (
-    <svg
-      width={20}
-      height={20}
-      viewBox='0 0 24 24'
-      strokeWidth={1.5}
-      stroke='currentColor'
-      fill='none'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      {...props}
-    >
-      <path d='M0 0h24v24H0z' stroke='none' />
-      <circle cx={12} cy={12} r={2} />
-      <path d='M22 12c-2.667 4.667-6 7-10 7s-7.333-2.333-10-7c2.667-4.667 6-7 10-7s7.333 2.333 10 7' />
-    </svg>
-  )
-}
-
 export const CalendarIcon = props => {
   return (
     <svg
@@ -219,6 +137,25 @@ export const CalendarIcon = props => {
       <path d='M11.795 21H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4M18 14v4h4' />
       <circle cx={18} cy={18} r={4} />
       <path d='M15 3v4M7 3v4M3 11h16' />
+    </svg>
+  )
+}
+
+export const MenuIcon = (props) => {
+  return (
+    <svg
+      width={20}
+      height={20}
+      viewBox='0 0 24 24'
+      strokeWidth={1.5}
+      stroke='#2c3e50'
+      fill='none'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      {...props}
+    >
+      <path d='M0 0h24v24H0z' stroke='none' />
+      <path d='M4 6h16M4 12h16M4 18h16' />
     </svg>
   )
 }

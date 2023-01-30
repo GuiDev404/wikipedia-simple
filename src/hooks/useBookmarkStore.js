@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { KEY_GUARDADOS } from '../utils/localStorage'
-
+// TODO: RENOMBRAR A useToggle
 export const useBookmarkStore = create(
   persist(
     (set, get) => ({

@@ -1,23 +1,25 @@
 import React from 'react'
 
-const Button = ({
-  type = 'button',
+const Anchor = ({
   children,
+  url,
+  title,
+  external,
   className,
-  proccesing = false,
   ...props
-} = {}) => {
+}) => {
   return (
-    <button
-      type={type}
-      disabled={proccesing}
+    <a
+      href={url}
+      title={title}
+      target={external ? '_blank' : '_self'}
+      rel='noreferrer'
       className={`outline-blue-600 border border-transparent rounded-md bg-zinc-100 h-full flex items-center gap-4 ${className}`}
       {...props}
     >
-      {/* {proccesing && 'Loading...'} */}
       {children}
-    </button>
+    </a>
   )
 }
 
-export default Button
+export default Anchor

@@ -1,13 +1,17 @@
-import React from 'react'
+import { memo } from 'react'
 import { Link } from 'react-router-dom'
-import Button from './Button'
+
 import { ExternalLinkIcon } from './Icons'
 import SaveButton from './SaveButton'
+import Anchor from './Anchor'
+
 import logo from '../assets/wikipedia_logo.png'
 
-const SearchResult = ({ pages, handleHideResult }) => {
+const SearchResult = ({ pages }) => {
+  const securePages = Object.values(pages ?? [])
+
   return (
-    Object.values(pages ?? [])?.map((page) => (
+    securePages.map((page) => (
       <div
         className='flex items-start justify-between mb-3 p-2 rounded-md gap-4 group'
         key={page.pageid}
@@ -25,7 +29,6 @@ const SearchResult = ({ pages, handleHideResult }) => {
           <h2 className='font-semibold -mt-1'>
             <Link
               to={`/article/${page.title.replaceAll(' ', '_')}`}
-              // onClick={handleHideResult}
             >
               {page.title}
             </Link>
@@ -34,22 +37,20 @@ const SearchResult = ({ pages, handleHideResult }) => {
         </div>
 
         <div className='self-center gap-2 hidden group-hover:flex'>
-          <Button
-            isLink
+          <Anchor
             external
             url={`https://es.wikipedia.org/?curid=${page.pageid}`}
             title={page.title}
-            styles='w-8 h-8 flex justify-center items-center '
-            leftIcon={<ExternalLinkIcon width={20} height={20} />}
-          />
+            className='w-8 h-8 flex justify-center items-center'
+          >
+            <ExternalLinkIcon width={20} height={20} />
+          </Anchor>
 
-          <SaveButton
-            page={page}
-          />
+          <SaveButton page={page} />
         </div>
       </div>
     ))
   )
 }
 
-export default React.memo(SearchResult)
+export default memo(SearchResult)

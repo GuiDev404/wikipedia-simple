@@ -30,7 +30,8 @@
     "rules": {
       "camelcase": "off",
       "no-extra-boolean-cast": "off",
-      "react/jsx-boolean-value": "off"
+      "react/jsx-boolean-value": "off",
+      "react/jsx-fragments": "off"
     }
   },
   "main": "vite.config.js",

@@ -2,10 +2,16 @@ refactor de los componentes
   si falta algun: memo
   si falta algun: use callback
   hacer algunos mas reusables: card
-  separar los componentes link  button
+  random article, search results, marcadores item y card header son parecidos, ver si puedo hacerlo un componente 
+  [x] separar los componentes link  button
   [x] asegurarse de que cuando algo pierda el foco se cierre 
   faltan skeleton
-  search input, hay 2 uno en marcadores y otros en el buscador, esto puede hacerse un componente solo el input
+  [x] search input, hay 2 uno en marcadores y otros en el buscador, esto puede hacerse un componente solo el input
   responsive
+  [ ] hacerlo en otra rama por las dudas mas tarde, fijarse si es posible poner el searchinput + el resultado en un componente, (esta en el buscador general, y en el de marcadores)
+  [ ] responsive navbar
 
 NO NECESARIO PERO CREAR UNA RAMA PARA HACER LO DE LOS GUARDADOS CON CONTEXT SIN ZUSTAND
+
+[x] VER SI PUEDO CREAR UN SECTION DIVIDER CUANDO SE PARA MOBILE OSEA, ESTO PARA EVITAR EL GRID RESPONSIVE - TRES LINKS, Y CAMBIAR DE COMPONENTE AL HACER CLICK
+- TRENDING/EN ESTE DIA/IMGEN DEL DIA
