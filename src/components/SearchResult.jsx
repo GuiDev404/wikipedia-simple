@@ -1,11 +1,12 @@
 import { memo } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 import { ExternalLinkIcon } from './Icons'
 import SaveButton from './SaveButton'
 import Anchor from './Anchor'
 
 import logo from '../assets/wikipedia_logo.png'
+import ArticleSmallPreview from './ArticleSmallPreview'
 
 const SearchResult = ({ pages }) => {
   const securePages = Object.values(pages ?? [])
@@ -16,7 +17,15 @@ const SearchResult = ({ pages }) => {
         className='flex items-start justify-between mb-3 p-2 rounded-md gap-4 group'
         key={page.pageid}
       >
-        <div className='w-10 h-10 rounded-md overflow-hidden bg-gray-100'>
+        <ArticleSmallPreview
+          className='border border-none px-0 py-0'
+          img={page.thumbnail ?? page.originalimage ?? logo}
+          title={page.title}
+          description={page.description}
+          linkPreview={`/article/${page.title.replaceAll(' ', '_')}`}
+          titleFontSize='text-sm'
+        />
+        {/* <div className='w-10 h-10 rounded-md overflow-hidden bg-gray-100'>
           <img
             loading='lazy'
             src={page?.thumbnail?.source ?? logo}
@@ -33,8 +42,8 @@ const SearchResult = ({ pages }) => {
               {page.title}
             </Link>
           </h2>
-          <p className='text-neutral-700 text-sm truncate w-[400px]'> {page.description} </p>
-        </div>
+          <p className='text-neutral-700 text-sm'> {page.description} </p>
+        </div> */}
 
         <div className='self-center gap-2 hidden group-hover:flex'>
           <Anchor

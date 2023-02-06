@@ -32,7 +32,7 @@ const Home = () => {
         <div className='my-10 flex items-center flex-col'>
           <Anchor
             url='#comenzar'
-            className='hover:border-neutral-400 hover:text-zinc-600 bg-white border-neutral-300 py-3 px-5 text-zinc-700 mb-10'
+            className='hover:border-neutral-300 hover:text-zinc-600 bg-white border-neutral-200 py-3 px-5 text-zinc-700 mb-10'
           >
             <ReadIcon width='20' height='20' />
             Comenzar a leer
@@ -49,6 +49,7 @@ const Home = () => {
       <div className='px-5' id='comenzar'>
 
         <Tabs
+          classNameHeader='gap-8 ml-2 mb-6 text-lg'
           className='block sm:hidden'
           tabs={tabs}
         />

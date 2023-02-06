@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from './Button'
 
-const Tabs = ({ tabs = [], initTab = 0, className = '' } = {}) => {
+const Tabs = ({ tabs = [], initTab = 0, className = '', classNameHeader = '', classNameContent = '' } = {}) => {
   const [activeTab, setActiveTab] = useState(initTab)
 
   const handleActiveTab = (tabId) => {
@@ -10,11 +10,11 @@ const Tabs = ({ tabs = [], initTab = 0, className = '' } = {}) => {
 
   return (
     <div className={`${className}`}>
-      <header className='flex gap-8 ml-2 mb-4'>
+      <header className={`flex flex-wrap items-center ${classNameHeader}`}>
         {tabs.map((tab) => (
           <Button
             key={tab.id}
-            className={`bg-transparent ${activeTab === tab.id ? 'text-neutral-900 font-bold' : 'text-neutral-700 font-normal'}`}
+            className={`justify-self-stretch px-2 py-1 ${activeTab === tab.id ? 'bg-neutral-800 rounded-md text-white' : 'text-neutral-600 font-normal bg-transparent'}`}
             onClick={handleActiveTab(tab.id)}
           >
             {tab.label}
@@ -22,7 +22,7 @@ const Tabs = ({ tabs = [], initTab = 0, className = '' } = {}) => {
         ))}
       </header>
 
-      <div>
+      <div className={` ${classNameContent}`}>
         {tabs[activeTab].content}
       </div>
     </div>

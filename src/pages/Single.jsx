@@ -4,6 +4,7 @@ import { useRecommendationLinks, useSingleSummary } from '../hooks/useSingle'
 import { ExternalLinkIcon } from '../components/Icons'
 import Anchor from '../components/Anchor'
 import ListOfLinks from '../components/ListOfLinks'
+import SaveButton from '../components/SaveButton'
 
 const Single = () => {
   const { keyword } = useParams()
@@ -39,26 +40,32 @@ const Single = () => {
     <>
       <div className='mx-auto max-w-[1000px] w-[90%] py-4 min-h-[87vh] -z-100'>
         <header className=''>
-          <h1
-            className={`${
+          <div className='flex flex-wrap items-center justify-between'>
+            <h1
+              className={`${
               loading_summary
                 ? 'animate-pulse h-10 w-3/4 bg-neutral-200 shadow-sm rounded-md'
                 : 'text-4xl font-bold flex'
             }`}
-          >
-            {page_summary?.title}
+            >
+              {page_summary?.title}
+
+              {!loading_summary && (
+                <Anchor
+                  className='self-top h-min w-fit bg-transparent px-2 py-1 hover:text-blue-600'
+                  external
+                  title='Leer articulo completo en Wikipedia'
+                  url={`https://es.wikipedia.org/wiki/${keyword}`}
+                >
+                  <ExternalLinkIcon width='16' />
+                </Anchor>
+              )}
+            </h1>
 
             {!loading_summary && (
-              <Anchor
-                className='self-top h-min w-fit bg-transparent px-2 py-1 hover:text-blue-600'
-                external
-                title='Leer articulo completo en Wikipedia'
-                url={`https://es.wikipedia.org/wiki/${keyword}`}
-              >
-                <ExternalLinkIcon width='16' />
-              </Anchor>
+              <SaveButton page={page_summary} className='bg-white scale-110 z-0 mt-2 sm:mt-0' />
             )}
-          </h1>
+          </div>
 
           <p
             className={

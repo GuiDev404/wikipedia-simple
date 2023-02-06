@@ -7,14 +7,17 @@ const OnThisDay = () => {
 
   if (error) return <p> {error?.message ?? 'Error'} </p>
 
-  // md:row-start-1  md:col-start-3 md:col-end-4 md:order-1 lg:col-start-1 lg:col-end-2 lg:order-[-1]
-
   return (
     <aside className='p-2  order-1 md:order-1'>
       <h2 className='text-2xl font-bold '> Un dia como hoy en: </h2>
 
       {isLoading
-        ? 'Loading...'
+        ? [...Array(3).keys()].map((key) => (
+          <div key={key}>
+            <div className='mt-5 h-6 w-32 rounded-md animate-pulse bg-neutral-200 shadow-sm'>  </div>
+            <div className='mt-2 h-24 w-full rounded-md animate-pulse bg-neutral-200 shadow-sm'> </div>
+          </div>
+          ))
         : data.onthisday.map(article => {
           const { pageid, normalizedtitle, title } = article.pages[0]
 

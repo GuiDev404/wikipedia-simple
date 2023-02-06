@@ -11,14 +11,18 @@ const Trending = () => {
 
   if (error) return <p> {error?.message ?? 'Error'} </p>
 
-  // md-order-[-1] md:col-start-1 md:col-end-3 lg:col-start-2 lg:col-end-4 lg:order-0
-
   return (
     <section className='p-2 order-[-1] md:order-1 sm:col-span-2 h-fit sm:h-0 md:h-fit'>
       <h2 className='text-2xl font-bold'> Tendencias del dia </h2>
       <div className='flex flex-col gap-5 my-5'>
         {isLoading
-          ? <p>Loading...</p>
+          ? (
+            <div>
+              <div className='h-80 w-full rounded-md animate-pulse bg-neutral-200 shadow-sm'>  </div>
+              <div className='mt-2 h-6 w-32 rounded-md animate-pulse bg-neutral-200 shadow-sm'> </div>
+              <div className='mt-4 h-16 w-full rounded-md animate-pulse bg-neutral-200 shadow-sm'> </div>
+            </div>
+            )
           : data.mostread.articles.sort(orderAsc).map((item, idx) => {
             return (
               <div
@@ -39,12 +43,6 @@ const Trending = () => {
                           className='object-cover w-full h-full'
                         />
                       </Link>
-                      {/* <figcaption className='absolute bottom-5 left-5'>
-                        <small className='rounded-sm p-1 text-white bg-gray-500 uppercase text-[.7rem]'>
-                          {' '}
-                          #{item.rank}{' '}
-                        </small>
-                      </figcaption> */}
                     </figure>
                     )
                   : null}

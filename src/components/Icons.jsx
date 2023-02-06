@@ -1,4 +1,3 @@
-
 export const SearchIcon = (props) => {
   return (
     <svg
@@ -148,7 +147,7 @@ export const MenuIcon = (props) => {
       height={20}
       viewBox='0 0 24 24'
       strokeWidth={1.5}
-      stroke='#2c3e50'
+      stroke='currentColor'
       fill='none'
       strokeLinecap='round'
       strokeLinejoin='round'

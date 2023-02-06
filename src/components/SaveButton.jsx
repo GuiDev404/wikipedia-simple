@@ -3,7 +3,7 @@ import { useBookmarkStore } from '../hooks/useBookmarkStore'
 import Button from './Button'
 import { SavedIcon } from './Icons'
 
-const SaveButton = ({ page } = {}) => {
+const SaveButton = ({ page, className = '' } = {}) => {
   const toggleSave = useBookmarkStore(state => state.toggleSave)
   const bookmarks = useBookmarkStore(state => state.bookmarks)
 
@@ -14,7 +14,7 @@ const SaveButton = ({ page } = {}) => {
   return (
     <Button
       onClick={handleToggle}
-      className='w-8 h-8 flex justify-center items-center'
+      className={`w-8 h-8 flex justify-center items-center ${className}`}
     >
       <SavedIcon
         width={20}

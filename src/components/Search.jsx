@@ -7,7 +7,7 @@ import { SpinIcon } from './Icons'
 import InputSearch from './InputSearch'
 import SearchResult from './SearchResult'
 
-const Search = () => {
+const Search = ({ noFloat = false } = {}) => {
   const { isOutside: showResult, ref, forceToggle } = useClickOutside({
     includesAnchor: true
   })
@@ -17,15 +17,20 @@ const Search = () => {
 
   const { data, error, isLoading } = useSearch(value)
 
-  const showSearchResults = showResult ? 'initial' : 'hidden'
+  let showSearchResults = 'initial'
+  if (!noFloat) {
+    showSearchResults = showResult ? 'initial' : 'hidden'
+  }
+
+  const overflowLoading = isLoading ? 'overflow-hidden' : 'overflow-y-auto'
 
   return (
     <>
-      <section
-        className={`fixed left-0 bottom-0 w-full bg-[rgb(0,0,0,.5)] h-full z-0 ${showSearchResults}`}
-      />
+      {!noFloat && <section
+        className={`fixed left-0 bottom-0 w-full bg-[rgb(0,0,0,.5)] h-full z-10 ${showSearchResults}`}
+                   />}
 
-      <div className='relative w-[80%]' ref={ref}>
+      <div className={`relative  z-50 ${!noFloat ? 'w-3/4' : 'w-[100%]'}`} ref={ref}>
 
         <InputSearch
           containerclassname='bg-white'
@@ -33,14 +38,14 @@ const Search = () => {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
           placeholder='Buscar en Wikipedia'
-          className='z-10 relative rounded-md'
+          className='relative rounded-md'
         />
 
         <section
-          className={`h-auto max-h-72 ${showSearchResults} absolute left-0 top-[100%] w-[98%] mx-[.5rem] bg-white p-4 shadow-md rounded-b-md ${isLoading ? 'overflow-hidden' : 'overflow-y-auto'} z-10`}
+          className={!noFloat ? `h-auto max-h-72 ${showSearchResults} absolute left-0 top-[100%] w-[98%] mx-[.5rem] bg-white p-4 shadow-md rounded-b-md ${overflowLoading}` : `my-5 ${overflowLoading}`}
         >
-          <header className='z-50'>
-            <p className='text-gray-700 text-sm mb-2 -mt-2'> {value ? <> Resultados para <strong> {value} </strong> </> : 'No has buscado nada. Ultimos resultados: '} </p>
+          <header className=''>
+            <p className={`text-gray-700 text-sm ${!noFloat ? 'mb-2 -mt-2' : ''}`}> {value ? <> Resultados para <strong> {value} </strong> </> : 'No has buscado nada. Ultimos resultados: '} </p>
             {(value && data && data?.query?.pages === undefined) && <p className='text-sm mt-2'> No hay resultados </p>}
           </header>
 
