@@ -1,7 +1,5 @@
-// import useSWR from 'swr'
 import useSWRInmutable from 'swr/immutable'
-import { getRelated } from '../services/getRelated'
-import { getTodayDate } from '../utils/getTodayDate'
+import { TODAY_IN_DATE } from '../services/config_api'
 
 // const FIVE_MINUTES = (1000 * 60) * 5
 
@@ -17,7 +15,7 @@ const useRelated = () => {
   //   refreshInterval: FIVE_MINUTES
   // })
 
-  return useSWRInmutable(`/date/${getTodayDate()}`, getRelated)
+  return useSWRInmutable(TODAY_IN_DATE())
 }
 
 export default useRelated

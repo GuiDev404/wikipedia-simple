@@ -1,8 +1,10 @@
 import useSWR from 'swr'
-import { getSearch } from '../services/getSearch'
+import { SEARCH } from '../services/config_api'
 
-const useSearch = (keyword) => {
-  return useSWR(Boolean(keyword.trim()) ? ['search/', keyword] : null, getSearch, {
+const useSearch = (query) => {
+  const keyURL = Boolean(query.trim()) ? SEARCH({ query }) : null
+
+  return useSWR(keyURL, {
     keepPreviousData: true,
     revalidateOnFocus: false
   })

@@ -41,7 +41,7 @@ const Bookmarks = ({ noFloat = false } = {}) => {
     <div className='relative' ref={ref}>
       {!noFloat && (
         <Button
-          className='py-[.2rem] px-4 bg-transparent focus:bg-gray-100 bg-neutral-50 hover:bg-gray-100 shadow-sm hover:text-gray-800 font-semibold  text-gray-900'
+          className='py-[.2rem] px-4 bg-transparent focus:bg-gray-100  border bg-gray-100 hover:text-gray-800 font-semibold  text-gray-900'
           onClick={toggle}
         >
           <BookmarksIcon />

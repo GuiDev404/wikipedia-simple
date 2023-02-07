@@ -1,13 +1,8 @@
-import useSWR from 'swr'
-// import { Link } from 'react-router-dom'
-import { getRandom } from '../services/getRandom'
+import useRandom from '../hooks/useRandom'
 import ArticleSmallPreview from './ArticleSmallPreview'
 
 const RandomArticle = () => {
-  const { data, error, isLoading } = useSWR('random', getRandom, {
-    revalidateOnFocus: false,
-    keepPreviousData: true
-  })
+  const { data, error, isLoading } = useRandom()
 
   if (error) return null
 

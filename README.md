@@ -15,8 +15,4 @@
 
 -----
 ### Services
-[ ] Organizar los de los services, probar generando un unico fetcher usar eso y pasar la url en otra rama
-
------
-### Otros
-[ ] NO NECESARIO PERO CREAR UNA RAMA PARA HACER LO DE LOS GUARDADOS CON CONTEXT SIN ZUSTAND
+[-] Organizar los de los services, probar generando un unico fetcher usar eso y pasar la url en otra rama
