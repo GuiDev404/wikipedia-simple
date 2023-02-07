@@ -1,14 +1,14 @@
 import useSWR from 'swr'
-import { getSummaryPage, getRecommendationLinks } from '../services/single'
+import { RELATED_ARTICLES, SUMMARY_ARTICLE } from '../services/config_api'
 
 export const useSingleSummary = (title_page) => {
-  return useSWR(['page', title_page], getSummaryPage, {
+  return useSWR(SUMMARY_ARTICLE(title_page), {
     revalidateOnFocus: false
   })
 }
 
 export const useRecommendationLinks = (title_page) => {
-  return useSWR(['recommended_links', title_page], getRecommendationLinks, {
+  return useSWR(RELATED_ARTICLES(title_page), {
     revalidateOnFocus: false,
     fallbackData: {
       pages: [...Array(7).keys()]
