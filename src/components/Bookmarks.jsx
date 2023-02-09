@@ -59,7 +59,7 @@ const Bookmarks = ({ noFloat = false } = {}) => {
           title={noBookmarks ? 'Guarde algo para buscar' : 'Buscar marcador'}
         />
 
-        <div className={`mt-4 flex flex-col items-start gap-3 ${!noFloat ? 'h-60 overflow-y-auto' : ''}`}>
+        <div className={`mt-4 flex flex-col items-start gap-3 ${!noFloat ? 'max-h-60 overflow-y-auto' : ''}`}>
           {(noBookmarks) &&
             <small> No has guardado ninguna pagina </small>}
 
