@@ -49,7 +49,7 @@ const Home = () => {
       <div className='px-5' id='comenzar'>
 
         <Tabs
-          classNameHeader='gap-8 ml-2 mb-6 text-lg'
+          classNameHeader='gap-4 ml-2 mb-6 grid grid-cols-3 place-items-center'
           className='block sm:hidden'
           tabs={tabs}
         />

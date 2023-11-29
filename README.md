@@ -10,8 +10,9 @@
 - [x] search input, hay 2 uno en marcadores y otros en el buscador, esto puede hacerse un componente solo el input
 - [x] responsive
 - [x] responsive navbar
-- [x] VER SI PUEDO CREAR UN SECTION DIVIDER (tabs era aksdla) CUANDO SE PARA MOBILE OSEA, ESTO PARA EVITAR EL GRID RESPONSIVE - TRES LINKS, Y CAMBIAR DE COMPONENTE AL HACER CLICK
+- [x] VER SI PUEDO CREAR UN SECTION DIVIDER (tabs era) CUANDO SE PARA DISPOSITIVOS MOVILES OSEA, ESTO PARA EVITAR EL GRID RESPONSIVE - TRES LINKS, Y CAMBIAR DE COMPONENTE AL HACER CLICK
   - [x] TRENDING/EN ESTE DIA/IMGEN DEL DIA
+- [x] Arreglar lo del buscador en modo responsivo
 
 -----
 ### Services

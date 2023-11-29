@@ -3,6 +3,7 @@ import useClickOutside from '../../hooks/useClickOutside'
 
 import ToggleMenu from './components/ToggleMenu'
 import { DrawerContext } from './context/DrawerContext'
+import { MenuIcon } from '../Icons'
 
 export * from './components/Content'
 export * from './components/Footer'
@@ -22,12 +23,14 @@ export default function Drawer ({ children, className = '', contentNoActive } = 
 
   return (
     <DrawerContext.Provider value={{ isOutside, toggle }}>
-      {!isOutside && (
-        <div className='flex items-center justify-between h-full sm:hidden'>
-          {contentNoActive}
-          <ToggleMenu className=' w-11 justify-center' />
-        </div>
-      )}
+      {/* {!isOutside && ( */}
+      <div className='flex items-center justify-between h-full sm:hidden'>
+        {contentNoActive}
+        <ToggleMenu className=' w-11 justify-center'>
+          <MenuIcon width='24px' height='24px' />
+        </ToggleMenu>
+      </div>
+      {/* )} */}
       <div
         className={`${!isOutside ? 'hidden' : ''} sm:hidden bg-neutral-900 left-0 top-0 h-full z-40 w-full bg-opacity-60 fixed ${className}`}
       >

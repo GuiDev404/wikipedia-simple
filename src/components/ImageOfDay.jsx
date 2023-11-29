@@ -28,7 +28,7 @@ const ImageOfDay = () => {
                 <img
                   loading='lazy'
                   className='rounded-md'
-                  src={data?.image?.image?.source ?? data?.image?.thumbnail?.source}
+                  src={data?.image?.thumbnail?.source ?? data?.image?.image?.source}
                   alt={data.image.description.text}
                   title={data.image.title}
                 />

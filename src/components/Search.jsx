@@ -38,7 +38,7 @@ const Search = ({ noFloat = false } = {}) => {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
           placeholder='Buscar en Wikipedia'
-          className='relative rounded-md'
+          className='text-sm sm:text-base relative rounded-md'
         />
 
         <section

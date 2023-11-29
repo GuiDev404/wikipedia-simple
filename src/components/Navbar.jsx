@@ -6,6 +6,7 @@ import Bookmarks from './Bookmarks'
 import Drawer, { DrawerContent, DrawerHeader } from './Drawer'
 import Tabs from './Tabs'
 import ToggleMenu from './Drawer/components/ToggleMenu'
+import { CloseIcon } from './Icons'
 
 const tabs = [
   {
@@ -65,7 +66,9 @@ const Navbar = () => {
       <Drawer contentNoActive={anchorToHome}>
         <DrawerHeader className='p-4 h-[75px]'>
           {anchorToHome}
-          <ToggleMenu className='self-stretch w-11 justify-center' />
+          <ToggleMenu className='self-stretch w-11 justify-center'>
+            <CloseIcon width='24px' height='24px' />
+          </ToggleMenu>
         </DrawerHeader>
         <DrawerContent>
           <Tabs
